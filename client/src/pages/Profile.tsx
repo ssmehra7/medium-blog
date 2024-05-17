@@ -3,8 +3,9 @@ import { useSelector } from "react-redux"
 
 
 export const Profile = () =>{
+    //@ts-ignore
     const user = useSelector((state)=>state.user.value);
-
+ //@ts-ignore
     const allblog = useSelector((state)=>state.allblog.value);
     console.log(allblog);
 

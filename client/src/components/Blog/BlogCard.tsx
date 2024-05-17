@@ -10,7 +10,7 @@ interface BlogProps {
 }
 
 
-export const BlogCard = ({author,title,content,publishedDate,key}:BlogProps) =>{
+export const BlogCard = ({author,title,content,publishedDate}:BlogProps) =>{
     return (
         <div className="border-b-2 border-slate-100 ">
             <div className="flex gap-2 ">

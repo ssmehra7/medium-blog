@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { AppBar } from "../components/Blog/AppBar"
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+// import axios from "axios";
+import { useDispatch } from "react-redux";
 import { addblog } from "../redux/slice/blogSlice";
 
 interface BlogInputType {
@@ -11,8 +11,8 @@ interface BlogInputType {
 
 export const CreateBlog = () =>{
     const dispatch = useDispatch();
-    const selector = useSelector((state)=>state);
-    const blog = selector.blog;
+    // const selector = useSelector((state)=>state);
+    // const blog = selector.blog;
     const [blogInput,setBlogInput]=useState<BlogInputType>({
         title:'',
         content:''
@@ -23,14 +23,14 @@ export const CreateBlog = () =>{
         // console.log(blog.value)
     },[blogInput]);
     
-    function TitleInput(e){
+    function TitleInput(e: React.ChangeEvent<HTMLInputElement>){
         setBlogInput({
             ...blogInput,
             title:e.target.value,
         })
     }
 
-    function ContentInput(e){
+    function ContentInput(e: React.ChangeEvent<HTMLTextAreaElement>){
         setBlogInput({
             ...blogInput,
             content:e.target.value

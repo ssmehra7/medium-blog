@@ -10,13 +10,21 @@ import { useDispatch, useSelector } from "react-redux"
 import { adduser } from "../redux/slice/userSlice"
 
 
+// Assuming your user state slice has a value property of type SigninType
+interface RootState {
+    user: {
+        value: SigninType;
+    };
+    // Define other slices of your Redux state...
+}
 
 
 
 export const Signin = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const user = useSelector((state)=>state.user.value);
+    const user = useSelector((state: RootState) => state.user.value);
+
     
 
     const [Input,setInput] = useState<SigninType>({

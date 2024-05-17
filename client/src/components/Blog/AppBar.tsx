@@ -5,9 +5,10 @@ import axios from "axios";
 import { BACKEND_URL } from "../../config";
 
 export const AppBar = () => {
-const selector = useSelector((state)=>state);
+const selector:any = useSelector((state)=>state);
+
 const blog = selector.blog.value;
-const userredux = selector.user.value;
+
 const navigate = useNavigate();
     const token = localStorage.getItem('token');
     const location = useLocation();

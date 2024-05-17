@@ -1,4 +1,4 @@
-import { Link, resolvePath, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { InputBox } from "../components/InputBox"
 
 import { Quote } from "../components/Quote"
