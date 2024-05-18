@@ -4,7 +4,7 @@ interface InputBoxtype {
     placeholder:string;
     type:string;
     
-    onChange:(e)=>void
+    onChange:(e: React.ChangeEvent<HTMLInputElement>)=>void
 }
 
 
