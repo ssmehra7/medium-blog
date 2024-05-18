@@ -74,6 +74,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addallBlog } from "../redux/slice/allblogSlice";
+import { Skeleton } from "../components/Skeleton";
 
 interface BlogAuthor {
   name: string;
@@ -90,6 +91,7 @@ interface BlogData {
 export const Blog = () => {
   const token = localStorage.getItem("token");
   const [blogdata, setBlogdata] = useState<BlogData[]>([]);
+  const [loading,setloading] = useState(true);
   const dispatch = useDispatch();
 
   async function getallBlog() {
@@ -100,7 +102,8 @@ export const Blog = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(response);
+      setloading(false);
+      // console.log(response);
       setBlogdata(response.data.blogs);
       dispatch(addallBlog(response.data.blogs));
     } catch (error) {
@@ -115,6 +118,16 @@ export const Blog = () => {
 
   return (
     <div>
+      {loading?<div className="flex flex-col gap-2 w-50 justify-center items-center h-screen">
+
+        <Skeleton/>
+        <Skeleton/>
+        <Skeleton/>
+        <Skeleton/>
+        <Skeleton/>
+        
+
+      </div>:<div>
       <AppBar />
       <div className="flex flex-col w-1/2 pt-10 mx-auto gap-5">
         {blogdata.map((blog) => (
@@ -129,6 +142,9 @@ export const Blog = () => {
           </Link>
         ))}
       </div>
+      </div>}
+      
+     
     </div>
   );
 };

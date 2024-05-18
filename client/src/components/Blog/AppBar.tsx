@@ -66,6 +66,7 @@ const navigate = useNavigate();
                 <Link to={'/ourstory'}>
                 <div className="font-serif">Our Story</div>
 
+
                 </Link>
                 
 
