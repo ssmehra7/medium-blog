@@ -3,7 +3,7 @@ interface InputBoxtype {
     label:string;
     placeholder:string;
     type:string;
-    //@ts-ignore
+    
     onChange:(e)=>void
 }
 
