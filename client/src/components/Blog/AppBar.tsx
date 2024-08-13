@@ -43,7 +43,7 @@ const navigate = useNavigate();
 
     return (
         <div className="flex justify-between items-center borderunde px-16 py-5">
-            <Link to={'/'}> <div className="text-3xl font-semibold font-serif">Medium</div></Link>
+            <Link to={'/'}> <div className="text-3xl font-semibold font-serif">WordWave</div></Link>
             <div className="flex justify-center gap-5">
                
                 {location.pathname === '/blog/create' ? (
