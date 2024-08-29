@@ -24,10 +24,10 @@ export const Home = () =>{
       <AppBar/>
       </div>
       
-      <div className="bg-yellow-500 border-y px-16 border-black  border-black h-screen flex items-center  ">
+      <div className="bg-yellow-500 border-y px-16   border-black h-screen flex   ">
         
         <div className="flex flex-col">
-          <div className="text-8xl pb-6 font-serif">
+          <div className="text-8xl pb-6 font-serif mt-10">
           Stay Curious.
           </div>
           <div className="text-2xl pb-4 font-medium">
